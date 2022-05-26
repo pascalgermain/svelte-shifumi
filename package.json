@@ -1,7 +1,9 @@
 {
-  "name": "svelte-app",
+  "name": "svelte-shifumi",
   "version": "1.0.0",
-  "private": true,
+  "description": "A Svelte Shifumi game.",
+  "author": "Pascal Germain <pascalgermain@me.com>",
+  "homepage": "http://pascalgermain.github.io/svelte-shifumi",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
