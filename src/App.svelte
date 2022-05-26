@@ -1,34 +1,26 @@
 <script lang="ts">
-  export let name
+  import MenuScene from './scenes/MenuScene.svelte'
+  import { Scene } from './stores/GameStore'
+
+  const sceneComponents = {
+    [Scene.MENU]: MenuScene,
+  }
+
+  const sceneComponent = sceneComponents.MENU
 </script>
 
 <style>
   main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+    margin-top: 60px;
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
+  .scene {
+    max-width: 1200px;
   }
 </style>
 
-<main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
+<main class="text-center">
+  <img src="/images/logo.svg" alt="Svelte logo" width="166" height="200" />
+  <h1>Svelte Shifumi</h1>
+  <svelte:component this={sceneComponent} class="mx-auto mt scene" />
 </main>
