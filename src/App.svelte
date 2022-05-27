@@ -19,7 +19,7 @@
 </style>
 
 <main class="text-center">
-  <img src="/images/logo.svg" alt="Svelte logo" width="166" height="200" />
+  <img src="images/logo.svg" alt="Svelte logo" width="166" height="200" />
 
   <h1>Svelte Shifumi</h1>
 

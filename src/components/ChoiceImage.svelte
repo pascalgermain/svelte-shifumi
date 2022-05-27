@@ -12,7 +12,7 @@
   const dispatch = createEventDispatcher()
 
   $: choiceLower = choice.toLowerCase()
-  $: src = `/images/choices/${choiceLower}_${number}.png`
+  $: src = `images/choices/${choiceLower}_${number}.png`
   $: alt = ucfirst(choiceLower)
   $: title = disabled ? '' : alt
 
