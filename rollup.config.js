@@ -2,9 +2,9 @@ import sveltePreprocess from 'svelte-preprocess'
 import alias from '@rollup/plugin-alias'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
+import css from 'rollup-plugin-css-only'
 import typescript from '@rollup/plugin-typescript'
 import livereload from 'rollup-plugin-livereload'
-import scss from 'rollup-plugin-scss'
 import svelte from 'rollup-plugin-svelte'
 import { terser } from 'rollup-plugin-terser'
 
@@ -50,7 +50,7 @@ export default {
       resolve: ['.svelte', '.ts'],
       entries: [{ find: '@', replacement: 'src' }],
     }),
-    scss({ output: 'public/build/bundle.css' }),
+    css({ output: 'bundle.css' }),
     resolve({
       browser: true,
       dedupe: ['svelte'],
