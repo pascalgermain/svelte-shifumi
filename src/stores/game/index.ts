@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import { splice } from '../../utils/common'
+import { splice } from '@/utils/common'
 import type { Game, Player, Choice } from './game.types'
 
 export * from './game.types'
