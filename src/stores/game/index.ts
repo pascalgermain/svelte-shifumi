@@ -6,7 +6,10 @@ export * from './game.types'
 
 const state = writable<Game>({
   scene: 'MENU',
-  players: ['HUMAN', 'COMPUTER'],
+  players: [
+    { number: 1, type: 'HUMAN' },
+    { number: 2, type: 'COMPUTER' },
+  ],
   step: 'INTRO',
   choices: [null, null],
 })
@@ -18,7 +21,7 @@ export default {
     state.update((data) => ({ ...data, scene }))
   },
 
-  setPlayer(player: keyof typeof Player, index: number) {
+  setPlayer(player: Player, index: number) {
     state.update((data) => ({
       ...data,
       players: splice(data.players, index, 1, player) as Game['players'],

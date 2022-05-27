@@ -3,9 +3,14 @@ export enum Scene {
   GAME = 'GAME',
 }
 
-export enum Player {
+export enum PlayerType {
   HUMAN = 'HUMAN',
   COMPUTER = 'COMPUTER',
+}
+
+export type Player = {
+  number: number
+  type: keyof typeof PlayerType
 }
 
 export enum Step {
@@ -22,7 +27,7 @@ export enum Choice {
 
 export type Game = {
   scene: keyof typeof Scene
-  players: [keyof typeof Player, keyof typeof Player]
+  players: [Player, Player]
   step: keyof typeof Step
   choices: [keyof typeof Choice | null, keyof typeof Choice | null]
 }
