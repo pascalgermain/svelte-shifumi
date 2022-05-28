@@ -1,4 +1,5 @@
 <script lang="ts">
+  import GithubCorner from './components/GithubCorner.svelte'
   import GameScene from './scenes/GameScene.svelte'
   import MenuScene from './scenes/MenuScene.svelte'
   import game, { Game, Scene } from './stores/game'
@@ -27,3 +28,5 @@
     <svelte:component this={sceneComponent} />
   </div>
 </main>
+
+<GithubCorner url="pascalgermain/svelte-shifumi" />
