@@ -5,8 +5,9 @@
   import game, { Game, Scene } from './stores/game'
 
   const sceneComponents = { [Scene.MENU]: MenuScene, [Scene.GAME]: GameScene }
-  let sceneComponent: Game['Scene']
-  game.state.subscribe(({ scene }) => (sceneComponent = sceneComponents[scene]))
+  const { state } = game
+
+  $: sceneComponent = sceneComponents[$state.scene]
 </script>
 
 <style>

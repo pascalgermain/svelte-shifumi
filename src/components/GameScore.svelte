@@ -8,19 +8,17 @@
   const choiceKeys = Object.keys(Choice) as (keyof typeof Choice)[]
 
   let score: string
-  state.subscribe(({ choices }) => {
-    let winner: number | null
-    if (choices[0] === choices[1]) {
-      winner = null
-    } else {
-      const choiceIndexes: number[] = choices.map(choice =>
-        choiceKeys.findIndex(choiceKey => choice === choiceKey),
-      )
-      const diff = choiceIndexes[1] - choiceIndexes[0]
-      winner = diff === 1 || diff === -2 ? 1 : 2
-    }
-    score = winner === null ? 'Nobody wins :(' : `Player ${winner} wins :)`
-  })
+
+  $: if ($state.choices[0] === $state.choices[1]) {
+    score = 'Nobody wins :('
+  } else {
+    const choiceIndexes = $state.choices.map(choice =>
+      choiceKeys.findIndex(choiceKey => choice === choiceKey),
+    )
+    const diff = choiceIndexes[1] - choiceIndexes[0]
+    const winner = diff === 1 || diff === -2 ? 1 : 2
+    score = `Player ${winner} wins :)`
+  }
 
   const handleClick = detail => dispatch(detail)
 </script>
