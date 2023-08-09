@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'utilities';
+
+h2 {
+	margin: 20px 0 0;
+}
+
+a {
+	color: $primary;
+}
+
+.btn {
+	outline: none;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 16px;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background-color: $primary;
+	color: $white;
+}
