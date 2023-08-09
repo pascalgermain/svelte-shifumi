@@ -1,13 +1,13 @@
 import { writable } from 'svelte/store'
 
-import { splice } from '$lib/utils/common'
+import { objectKeys, splice } from '$lib/utils/common'
 
 import type { Game, Player } from './game.types'
 import { Choice } from './game.types'
 
 export * from './game.types'
 
-export const choices = Object.keys(Choice) as (keyof typeof Choice)[]
+export const choices = objectKeys(Choice)
 
 const state = writable<Game>({
 	scene: 'MENU',
